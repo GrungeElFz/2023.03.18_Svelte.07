@@ -1,0 +1,6 @@
+:root {
+	background-color: rgb(35, 35, 35);
+	color: rgb(245, 245, 245);
+	--buttonBgColor: orangered;
+  --buttonTextColor: white;
+}
