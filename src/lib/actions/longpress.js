@@ -1,7 +1,7 @@
 export default function longpress(node, options) {
 	let timer;
 
-	function handleMousedown() {
+	function handleMouseDown() {
 		const { duratuion = 2000 } = options;
 
 		timer = setTimeout(() => {
@@ -13,7 +13,7 @@ export default function longpress(node, options) {
 		clearTimeout(timer);
 	}
 
-	node.addEventListener('mousedown', handleMousedown);
+	node.addEventListener('mousedown', handleMouseDown);
 	node.addEventListener('mouseup', handleMouseUp);
 
 	return {
@@ -21,9 +21,8 @@ export default function longpress(node, options) {
 			options = newOptions;
 		},
 		destroy() {
-			console.log('destroyed');
       clearTimeout(timer);
-      node.removeEventListener('mousedown', handleMousedown);
+      node.removeEventListener('mousedown', handleMouseDown);
       node.removeEventListener('mouseup', handleMouseUp);
 		}
 	};
